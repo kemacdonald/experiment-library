@@ -1,0 +1,305 @@
+<html>
+    <head>
+        <title>Learning Game!</title>
+
+        <!--CSS-->
+        <link href="../_shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../_shared/css/langcog-style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
+
+         <!-- external general utilities -->
+        <script src="../_shared/js/jquery-1.11.1.min.js "></script>
+        <script src="../_shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+
+        <!-- for drawing -->
+        <script src="../_shared/js/raphael-min.js"></script> 
+
+        <!-- lab general utilities -->
+        <script src="../_shared/js/mmturkey.js "></script>
+        <script src="../_shared/js/browserCheck.js"></script>
+        <script src="../_shared/js/utils.js"></script>
+
+    </head>
+
+             
+    <body>  
+        <!--INSTRUCTIONS SLIDE-->
+        <div class="slide" id="instructions">
+
+            <img src="../_shared/images/stanford.png" alt="Stanford University">
+            
+            <br><br>
+              <h>Stanford Language and Cognition Lab</h>
+
+              <br><br>
+              
+              <p>
+              This HIT will only work in GOOGLE CHROME and should take ~10-15 minutes
+              <br><br>
+
+              <b>PLEASE DO ONLY ONE HIT.</b> If you do multiple HITs, you will not be paid.
+
+              <br><br>
+              In this experiment, you will learn how to categorize television antennas. 
+              <br><br>
+              Please pay attention, thanks! 
+              </p>
+    
+                <button id="start_button" type="button" onClick="this.blur(); 
+                showSlide('instructions2')">I am 
+                ready to begin</button>
+            <br>
+                <p class="block-text" id="legal">
+                By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact us at langcoglab@stanford.edu. You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.
+
+                <br><br>
+                We have recently been made aware that your public 
+                <a href="http://www.amazon.com">Amazon.com</a> profile can be 
+                accessed via your worker ID if you do not choose to opt out. 
+                If you would like to opt out of this feature, you may follow 
+                instructions available here:
+                <br>
+                <a href="http://www.amazon.com/gp/help/customer/display.html?nodeId=16465241">http://www.amazon.com/gp/help/customer/display.html?nodeId=16465241</a>
+                
+                </p>
+
+        </div>
+        
+    <!--INSTRUCTIONS 2 SLIDE-->
+    <div class="slide" id="instructions2">
+          <h3>Instructions</h3>
+                <p id="instructions_text">In this game you will see 
+                  "loop antennas" for televisions and each antenna 
+                  receives one of two channels (CH1 or CH2). The 
+                  channel received by an antenna depends on its
+                  <b>size</b> and <b>angle</b>.
+
+                  <br><br>
+
+                  There are two roles in this game: Designer and Apprentice.
+                  
+                  <br><br>
+
+                  First you will get some practice as a Designer. Then, 
+                  you will be randomly assigned to one of the two roles. 
+                  
+                  <br><br>
+                  
+                  *To adjust the size, press and release the <b>Z key</b>, 
+                  then click/drag the antenna <b>L/R</b>. <br> 
+                  *To adjust the angle, press and release the <b>X key</b>, 
+                  then click/drag the antenna <b>L/R</b>.
+                  
+                  <br><br>
+                  
+                  <b>NOTE</b> you will have to click within the antenna to adjust it. 
+
+                  <br><br>
+
+                  <b>Press C</b> to learn what station the antenna receives.
+                  
+                  <br><br>
+
+                  Click the Continue button to begin.
+              </p>
+
+                
+                <center><button type="button" onClick="this.blur(); 
+                experiment.next()">Continue</button></center>
+        </div>
+
+         <!-- INSTRUCTIONS 3 SLIDE-->
+    <div class="slide" id="instructions3">
+
+        <h3> You have completed the Designer practice trials </h3>
+
+        <h4> Click the button below to see if you will be a Designer or an Apprentice </h4>
+
+        <br>
+
+        <center><button type="button" onClick="this.blur(); 
+                experiment.loadingSlide()">Continue</button>
+        </center>
+    
+    </div>
+
+
+    <!-- LOADING SLIDE-->
+    <div class="slide" id="loading">
+
+        <h3> Retrieving your assignment </h3>
+
+        <img id="loading_spinner" src="../_shared/images/ajax-loader.gif" alt="Loading" style="width:50px;height:50px">
+    
+    </div>
+
+   
+
+        <!--INSTRUCTIONS 4 SLIDE-->
+    <div class="slide" id="instructions4">
+          <h3>You have been assigned to the role of Apprenctice!</h3>
+                  
+                  <p id="instructions_text">
+
+                    Your goal is to learn the difference between the 
+                    two types of antennas. The antennas are noisy and 
+                    can pick up the wrong channel on occasion, so you 
+                    should learn what channel is most often received 
+                    by a particular type of antenna.
+
+                    <br><br>
+
+                    You will learn about the exact same antennas that were created by the Designer you've been partnered with, using the design process you just practiced. You will see their designs in the exact same order as they were tested by the Designer. 
+
+                    <br><br>
+
+                    Keep in mind that the Designer wasn't told that their designs would be used to teach an Apprentice, but they were trying to learn the same thing as you.
+
+                  </p>
+
+                  <p id="instructions_text">
+                    To advance: 
+                    <br>
+                    Press the <b>Z key</b> if the antenna receives Channel 1. 
+                    <br>
+                    Press the <b>X key</b> if the antenna receives Channel 2. 
+                    <br><br>
+                    Click the Continue button to begin.
+                  </p>
+
+                
+                <center><button type="button" onClick="this.blur(); 
+                experiment.next()">Continue</button></center>
+        </div>
+
+<!--TEST SLIDE-->
+      <div class="slide" id="stage">
+      		<!-- Progress Bar -->
+        	<div class="progress"></div>
+
+            <p id="task_instructions">
+              To adjust <b>size</b>, press Z, then click/drag antenna L/R. <br>
+              To adjust <b>angle</b>, press X, then click/drag antenna L/R. <br>
+              To learn the station, <b>press C</b>.
+            </p>
+
+            <p id="receptive_instructions">
+              Z = Channel 1 and X = Channel 2 <br><br>
+              This antenna receives:          
+            </p>
+
+            <p id="test_instructions">
+              Which channel does this antenna receive? 
+            </p>
+
+            <!-- category label -->
+            <table id="category_table">
+              <tr>
+                <td><button id="channel_1" type="button">Channel 1</button></td>
+                <td><button id="channel_2" type="button">Channel 2</button></td> 
+              </tr>
+            </table>
+
+<!--              <p id="slider_instructions">
+              How confident are you in your response?
+            </p>
+
+            <table id="slider_table" class="slider_table">
+                    <tr><td class="left">not at all confident</td>
+                      <td align-"center"><div id="single_slider" class="slider"></div></td>
+                      <td class="right">extremely confident</td>
+                    </tr>
+            </table> 
+
+            <p id="slider_instructions2">
+              (Press the space bar to submit your confidence rating)
+            </p> 
+ -->
+
+            <!-- category label table-->
+            <div class="category_label">
+                <table id="category_label_table">
+                  <tr>
+                    <td id="adjust_mode" align="center"><span id="adjust"></span></td>
+                    <td id="channel_label" align="center"><span id="category"></span></td> 
+                  </tr>
+                </table>
+           </div>
+
+            <!-- antenna -->
+           <div id ="antenna"></div>       
+      </div>  
+
+<!--SUMMARY SLIDE -->    
+      <div class="slide" id="summarySlide"> 
+        <p id="block_acc_text">Accuracy on preceding block <span id="block_acc">{{}}</span></p>
+
+        <center>
+          <button type="button" onClick="this.blur(); experiment.blank()">Continue HIT</button>
+        </center>
+
+      </div>
+
+<!--BLANK SLIDE -->    
+      <div class="slide" id="blankSlide"> </div>
+
+<!--FINISHED SLIDE -->        
+      <div class="slide" id="finished">
+          You're finished - thanks for participating! Submitting to 
+          Mechanical Turk...
+      </div>
+
+
+<!--Q&A Slide-->
+        <div class="slide"  id="qanda">
+            <div class="long_form">
+              <div class="subj_info_title">Additional information</div>
+              <p class="info">Answering these questions is optional, but will help us understand your answers.</p>
+              <p>Did you read the instructions and do you think you did the HIT correctly?</p>
+              <label><input type="radio"  name="assess" value="No"/>No</label>
+              <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
+              <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
+
+              <p>Gender:
+                <select id="gender">
+                  <label><option value=""/></label>
+                  <label><option value="Male"/>Male</label>
+                  <label><option value="Female"/>Female</label>
+                  <label><option value="Other"/>Other</label>
+                </select>
+              </p>
+
+              <p>Age: <input type="text" id="age"/></p>
+
+              <p>Level Of Education:
+                <select id="education">
+                  <label><option value="-1"/></label>
+                  <label><option value="0"/>Some High School</label>
+                  <label><option value="1"/>Graduated High School</label>
+                  <label><option value="2"/>Some College</label>
+                  <label><option value="3"/>Graduated College</label>
+                  <label><option value="4"/>Hold a higher degree</label>
+                </select>
+              </p>
+
+              <p>Native Language: <input type="text" id="language"/></p>
+              <label>(the language(s) spoken at home when you were a child)</label>
+
+              <p>Did you enjoy the hit?</p>
+              <select id="enjoyment">
+                <label><option value="-1"></option></label>
+                <label><option value="0">Worse than the Average HIT</option></label>
+                <label><option value="1" >An Average HIT</option></label>
+                <label><option value="2">Better than average HIT</option></label>
+              </select>
+
+              <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+              <textarea id="comments" rows="3" cols="50"></textarea>
+              <br/>
+              <button onclick="experiment.end()">Submit</button>
+            </div>
+
+            <!-- experiment file -->
+        <script src="js/act-learn-yoked.js"></script>
+    </body>
+</html>

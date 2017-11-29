@@ -1,0 +1,150 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Mindsets</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <link rel="stylesheet" href="coco-experiment.css" />
+  <link rel="stylesheet" href="jquery-ui.css"/>
+</head> 
+<body>
+
+<!-- standard experiment pieces -->
+
+<div class="progress">
+  <span>Progress:</span>
+  <div class="bar-wrapper">
+    <div class="bar" width="0%">
+    </div>
+  </div>
+</div>
+
+<div id="experiment_content">
+
+<div class="slide" id="consent">
+  <img src="stanford.png" alt="Stanford University">
+  <br>
+  <br>
+  <p class="block-text">In this experiment, we are interested in how people reason about people’s performance in classes. We will ask you to give us your opinion on some statements.</p>
+  <p class="block-text">This experiment should take about 3 minutes to complete.</b></p> 
+  <button type="button" onClick="this.blur(); experiment.trial(0)">Start</button>
+  <p class="block-text">(Note: you won't be able to preview this HIT before accepting it.)</p>
+  <p class="block-text" id="mustaccept"> You must accept the HIT in order to continue.</p>
+  <p class="block-text" id="legal">By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact Erin Bennett at 
+  <a href="mailto:erindb@stanford.edu">erindb@stanford.edu</a> or Noah Goodman at ngoodman@stanford.edu. You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>
+</div>
+
+<div class="slide" id="outgoing_questionnaire">
+  <p><b>Thanks! Just a few more questions:</b></p>
+  <p>What do you think this experiment was about? <input type="text" id="what_about"></input></p>
+  <p>* Have you ever heard of "mindsets"?
+    <select id="heard_of">
+      <option></option>
+      <option>yes</option>
+      <option>no</option>
+    </select></p>
+  <p id="if_heard_of">* Please describe what a "fixed" mindset is: <input type="text" id="what_is_fixed"></input></p>
+  <p>* What is your gender?
+    <select id="gender">
+      <option></option>
+      <option>female</option>
+      <option>male</option>
+    </select></p>
+  <div><p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+    <textarea rows="7" cols="70" id="comments"></textarea></div>
+  <p>Would you like to hear more about this study?
+    <select id="hear_more">
+      <option></option>
+      <option>yes</option>
+      <option>no</option>
+    </select></p>
+  <button type="button" id="formsubmit">Submit</button>
+  <p>* indicates a required field</p>
+  <p class="err">Please answer the required questions.</p>
+</div>
+
+<div class="slide" id="finished">
+  You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+
+<!-- slides for this experiment -->
+<div class="slide" id="goals">
+  <p>Imagine that you are taking a test in a math class.</p>
+  <p class="prompt"></p>
+  <table><tbody>
+    <tr>
+      <td></td>
+      <td class="slider_labels">
+        <div class="left_label">very unlikely</div>
+        <div class="right_label">very likely</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref0"></td>
+      <td class="slider_container"><div id="slider0" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref1"></td>
+      <td class="slider_container"><div id="slider1" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref2"></td>
+      <td class="slider_container"><div id="slider2" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref3"></td>
+      <td class="slider_container"><div id="slider3" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref4"></td>
+      <td class="slider_container"><div id="slider4" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref5"></td>
+      <td class="slider_container"><div id="slider5" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref6"></td>
+      <td class="slider_container"><div id="slider6" class="slider"></div></td>
+    </tr>
+  </tbody></table>
+  <button type="button" class="continue">Continue</button>
+  <p class="err">Please make sure to adjust all the sliders before continuing (or tap the slider if you think it's already in the right position).</p>
+</div>
+
+<div class="slide" id="dweck_questions">
+  <p>Please show how much you agree or disagree with each statement by adjusting the slider.</p>
+  <table><tbody>
+    <tr>
+      <td></td>
+      <td class="slider_labels">
+        <div class="left_label">strongly disagree</div>
+        <div class="right_label">strongly agree</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref7"></td>
+      <td class="slider_container"><div id="slider7" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref8"></td>
+      <td class="slider_container"><div id="slider8" class="slider"></div></td>
+    </tr>
+    <tr>
+      <td class="slider_referent" id="ref9"></td>
+      <td class="slider_container"><div id="slider9" class="slider"></div></td>
+    </tr>
+  </tbody></table>
+  <button type="button" class="continue">Continue</button>
+  <p class="err">Please make sure to adjust all the sliders before continuing (or tap the slider if you think it's already in the right position).</p>
+</div>
+
+</div>
+
+<!-- run scripts -->
+<script src="jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="mmturkey.js"></script>
+<script src="browserCheck.js"></script>
+<script src="goals.js"></script>
+
+</body>

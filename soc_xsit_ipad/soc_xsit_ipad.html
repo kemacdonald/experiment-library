@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Word Learning</title>
+         <!--CSS-->
+        <link href="stylesheet" href="style/style.css" type="text/css"/>
+        <link href="style/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <link href ="style/jquery-ui/jquery-ui.css" rel="stylesheet"/ type="text/css"> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!--JS-->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/mmturkey.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/spriteData.js"></script>
+    </head>
+    
+    <body>
+
+
+<!--INSTRUCTIONS SLIDE-->
+        <div class="slide" id="instructions">
+          <center>
+            <img src="images/stanford.png" alt="Stanford University">
+                <p id='logo-text'>Stanford Language and Cognition Lab</p>
+             	    <p class="block-text">
+                  Subject ID: <br>
+                  <input type="number" pattern="\d*"/ id="subjectID" name="subjectID" size="30"> 
+                	</p>
+                  <button type="button" onClick="this.blur(); experiment.conditionClick()">
+                    <font size="24">Start</font>
+                  </button>
+            </center>
+        </div> 
+  
+<!--CONDITIONS SLIDE-->
+        <div class="slide" id="condition">
+        <br><br><br><br><br><br><br>
+         <center>
+              <button type="button" class = "conditionButton" id="No-social" onClick="this.blur(); experiment.training()">
+                <font size="24">No-social</font>
+              </button>
+              <br><br>
+              <button type="button" class = "conditionButton" id="Social" onClick="this.blur(); experiment.training()">
+                <font size="24">Social</font>
+              </button>
+        </center>
+      </div>
+
+
+<!--DOTS SLIDE-->
+    <div class="slide" id="training"> </div>
+
+<!--MORE TRAINING SLIDE-->
+    <div class="slide" id="instructions2">
+      <br><br><br><br><br><br><br>
+      <center>
+        <button type="button" onClick="this.blur(); experiment.training()">
+          <font size="24">More Training</font>
+        </button>
+          <br><br>
+        <button type="button" onClick="this.blur(); experiment.next()">
+          <font size="24">Start Game </font>
+        </button>
+      </center>
+    </div>
+
+  
+
+<!--INSTRUCTIONS 3 SLIDE-->
+    <div class="slide" id="instructions3">
+    <br><br><br><br><br><br><br>
+              <center>
+                <button type="button" onClick="this.blur(); experiment.next()">
+                  <font size="24">Start Game</font>
+                </button>
+            </center>
+    </div>
+
+
+
+<!--MAIN EXPERIMENT SLIDE-->
+    <div class="slide" id="stage">
+
+      <!-- VIDEO -->
+          <div id="video_player" align="center">
+            <video id="video1" width="350" height="300">
+              <source src="stimuli/videos/down-left.mov" type="video/mp4">
+              <source src="stimuli/videos/down-right.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+      <!-- IMAGES -->
+
+      <table align="center" cellpadding="30">
+            <tr></tr>
+                            
+            <tr>
+                <td align="center">
+                  <div class="xsit_pic" id="pic1">
+                    <img src="stimuli/images/Novel6.jpg" width="300" border="0px solid white">
+                  </div>
+                </td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td align="center">
+                  <div class="xsit_pic" id="pic2">
+                    <img src="stimuli/images/Novel13.jpg" width="300" border="0px solid white">
+                  </div>
+                </td>
+            </tr>   
+      </table>
+
+      <!-- SOUND PLAYER -->
+      <audio id="sound_player">
+        <source src="stimuli/sounds/audio_sprite.mp3" type="audio/mp3">
+      </audio>  
+
+    
+
+      <!-- CHIME PLAYER -->
+      <audio id="reward_player">
+        <source src="stimuli/sounds/chimes_quiet.mp3" type="audio/mp3">
+      </audio>   
+
+
+    </div>
+
+    
+<!--BLANK Slide-->
+    <div class="slide" id="blankSlide"> </div>  
+
+<!--END Slide-->
+    <div class="slide" id="finished"> </div>
+
+
+<!--Q&A Slide-->
+    <div class="slide" id="qanda">
+      <center>
+                <p class="block-text">Please answer these questions to complete 
+                this HIT</p>
+          
+          <p>Any comments about the session? </p>
+          <textarea id="comments" rows="7" cols="70" resize="none">
+          </textarea><br>
+          <br>
+                
+               <button type="button" onClick="this.blur(); experiment.end()">
+                <font size="24">Start Game</font>
+              </button>
+      </center>
+    </div>
+        
+        <script src="js/soc_xsit_ipad.js"></script>
+    </body>
+</html>

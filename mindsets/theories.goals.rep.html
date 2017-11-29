@@ -1,0 +1,443 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Mindsets</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="coco-experiment.css" />
+    <link rel="stylesheet" href="jquery-ui.css"/>
+  </head>
+  <body>
+    
+    <div class="progress">
+      <span>Progress:</span>
+      <div class="bar-wrapper">
+        <div class="bar" width="0%">
+        </div>
+      </div>
+    </div>
+    
+    <div id="experiment_content">
+      
+      <!-- ***** CONSENT SLIDE ***** -->
+      <div class="slide" id="consent">
+        <img src="stanford.png" alt="Stanford University"></img>
+        <br>
+        <br>
+        <p class="block-text">In this experiment, we are interested in how people reason about people’s performance in classes. We will ask you to give us your opinion on some statements.</p>
+        <p class="block-text">This experiment should take about 5-10 minutes to complete.</b></p>
+        <button type="button" onClick="this.blur(); experiment.intro()">Start</button>
+        <p class="block-text">(Note: you won't be able to preview this HIT before accepting it.)</p>
+        <p class="block-text" id="mustaccept"> You must accept the HIT in order to continue.</p>
+        <p class="block-text" id="legal">By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact Erin Bennett at
+        <a href="mailto:erindb@stanford.edu">erindb@stanford.edu</a> or Noah Goodman at ngoodman@stanford.edu. You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>
+      </div>
+
+      
+      <!-- ***** EXPERIMENT INTRODUCTION ***** -->
+      <div class="slide" id="introduction">
+        <p id="introduction">Imagine that at West High School, there’s a math class taught by Mrs. S.</p>
+        <p>We will give you some information about this class and the students taking it. You will then be asked to make some predictions.</p>
+        <p>We try hard to make our HITs enjoyable, so please reward us by paying attention and reading our instructions and questions carefully.</p>
+        <p>Thank you!</p>
+        <button type="button" class="continue">Continue</button>
+      </div>
+      
+      <!-- ***** SLIDER INTRODUCTION ***** -->
+      <div class="slide" id="slider_practice_intro">
+        <p>Before you start, you will see three practice trials to familiarize you with the slider bars that we use in our task. This helps us calibrate the sliders to your responses.
+        </p>
+        <br><br/>
+        <p>On each trial, you will see a display that contains blue and red dots. Please adjust the slider to reflect the proportion of red/blue dots in the display. 
+        </p>
+        <br><br/>
+
+        <button type="button" class="continue">Continue</button>
+      </div>
+      
+      <!-- ***** SLIDER PRACTICE ***** -->
+      <div class="slide" id="slider_practice">
+        <!-- slider practice <span id="slider_practice_number"></span>-->
+      </br>
+        <p>Please adjust the slider to indicate the proportion of red/blue dots in the display.</p>
+        </br>
+        <table align="center" cellpadding="30">
+            <tr>                   
+              <td align="center">
+                <div class="slider_practice" 
+                id="pic0">
+                  <img src="slider_practice/all_blue.png" width="400" border="5px solid white">
+               </div>
+              </td>
+            </tr>
+        </table>
+
+        <table><tbody>
+          <tr>
+            <td class="slider_labels">
+              <div class="left_label">All Red</div>
+              <div class="right_label">All Blue</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="slider_container" id="slider_practice_container"></td>
+          </tr>
+        </tbody></table>
+
+        <button type="button" class="continue">Continue</button>
+
+        <p class="err">Please make sure to adjust the slider before continuing (or tap the slider if you think it's already in the right position).</p>
+
+      </div>
+
+      <!-- ***** GOALS INTRODUCTION ***** -->
+      <div class="slide" id="goals_intro">
+        <p class="prompt"></p>
+        <button type="button" class="continue">Continue</button>
+      </div>
+
+      <!-- ***** GOALS TRIAL ***** -->
+      <div class="slide" id="goals">
+        <p>Imagine that you are taking a test in a math class.</p>
+        <p class="prompt"></p>
+        
+        <br></br>
+
+        <table><tbody>
+          <!-- Slider 1 -->
+          <tr>
+          <td></td>
+            <td class="slider_labels">
+              <div class="left_label">very unlikely</div>
+              <div class="right_label">very likely</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="slider_referent" id="ref0"></td>
+            <td class="slider_container"><div id="goals_slider0" class="slider"></div></td>
+          </tr>
+
+          <!-- Slider 2 -->
+          <tr>
+            <td class="slider_referent" id="ref1"></td>
+            <td class="slider_container"><div id="goals_slider1" class="slider"></div></td>
+          </tr>
+
+          <!-- Slider 3 -->
+          <tr>
+            <td class="slider_referent" id="ref2"></td>
+            <td class="slider_container"><div id="goals_slider2" class="slider"></div></td>
+          </tr>
+
+          <!-- Slider 4 -->
+          <tr>
+            <td class="slider_referent" id="ref3"></td>
+            <td class="slider_container"><div id="goals_slider3" class="slider"></div></td>
+          </tr>
+
+          <!-- Slider 5 -->
+          <tr>
+            <td class="slider_referent" id="ref4"></td>
+            <td class="slider_container"><div id="goals_slider4" class="slider"></div></td>
+          </tr>
+
+            <!-- Slider 6 -->
+          <tr>
+            <td class="slider_referent" id="ref5"></td>
+            <td class="slider_container"><div id="goals_slider5" class="slider"></div></td>
+          </tr>
+
+           <!-- Slider 7 -->
+          <tr>
+            <td class="slider_referent" id="ref6"></td>
+            <td class="slider_container"><div id="goals_slider6" class="slider"></div></td>
+          </tr>
+
+        </tbody></table>
+
+        <button type="button" class="continue">Continue</button>
+        <p class="err">Please make sure to adjust all the sliders before continuing (or tap the slider if you think it's already in the right position).</p>
+      </div>
+
+      <!-- ***** PERFORMANCE INTRODUCTION ***** -->
+      <div class="slide" id="performance_intro">
+        <p class="prompt"></p>
+        <button type="button" class="continue">Continue</button>
+      </div>
+      
+      <!-- ***** PERFORMANCE TRIAL ***** -->
+      <div class="slide" id="performance">
+        <p class="ability_prompt"></p>
+        <p class="training_prompt"></p>
+        <br/>
+        <p class="question_prompt"></p>
+        <br/>
+        <table><tbody>
+          <tr>
+            <td class="slider_labels">
+              <div class="left_label">0th percentile</div>
+              <div class="right_label">99th percentile</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="slider_container" id="performance_slider_container"></td>
+          </tr>
+        </tbody></table>
+        <button type="button" class="continue">Continue</button>
+        <p class="err">Please make sure to adjust the slider before continuing (or tap the slider if you think it's already in the right position).</p>
+      </div>
+
+      <!-- ***** IMPROVEMENT INTRODUCTION ***** -->
+      <div class="slide" id="improvement_intro">
+        <p class="prompt"></p>
+        <button type="button" class="continue">Continue</button>
+      </div>
+      
+      <!-- ***** IMPROVEMENT TRIAL ***** -->
+      <div class="slide" id="improvement">
+        <p class="ability_prompt"></p>
+        <p class="training_prompt"></p>
+        <br/>
+        <p class="question_prompt"></p>
+        <br/>
+        <table><tbody>
+          <tr>
+            <td class="slider_labels">
+              <div class="left_label">stays the same</div>
+              <div class="right_label">improves a lot</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="slider_container" id="improvement_slider_container"></td>
+          </tr>
+        </tbody></table>
+        <button type="button" class="continue">Continue</button>
+        <p class="err">Please make sure to adjust the slider before continuing (or tap the slider if you think it's already in the right position).</p>
+      </div>
+      
+      <!-- ***** DWECK QUESTIONNAIRE ***** -->
+      <div class="slide" id="dweck_questionnaire">
+        <p>Please show how much you agree or disagree with each statement by clicking the bubble that corresponds to your opinion.</p>
+        <br></br>
+
+    <div id="form">
+        
+        <form name="q0form">
+        &nbsp; <p class="dweck_prompt"></p> &nbsp; &nbsp; 
+            <span id="dweck_prompt_0">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q0" value="1" />  
+                    <input type="radio" name="q0" value="2" />  
+                    <input type="radio" name="q0" value="3" />  
+                    <input type="radio" name="q0" value="4" />  
+                    <input type="radio" name="q0" value="5" />  
+                    <input type="radio" name="q0" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+
+        <form name="q1form">
+        &nbsp; &nbsp; &nbsp; <p class="dweck_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="dweck_prompt_1">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q1" value="1" />  
+                    <input type="radio" name="q1" value="2" />  
+                    <input type="radio" name="q1" value="3" />  
+                    <input type="radio" name="q1" value="4" />  
+                    <input type="radio" name="q1" value="5" />  
+                    <input type="radio" name="q1" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+
+       <form name="q2form">
+        &nbsp; &nbsp; &nbsp; <p class="dweck_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="dweck_prompt_2">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q2" value="1"  class="required"/>  
+                    <input type="radio" name="q2" value="2" />  
+                    <input type="radio" name="q2" value="3" />  
+                    <input type="radio" name="q2" value="4" />  
+                    <input type="radio" name="q2" value="5" />  
+                    <input type="radio" name="q2" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+        
+       <form name="q3form">
+        &nbsp; &nbsp; &nbsp; <p class="dweck_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="dweck_prompt_3">
+               <b>Strongly Disagree</b>
+                    <input type="radio" name="q3" value="1" />  
+                    <input type="radio" name="q3" value="2" />  
+                    <input type="radio" name="q3" value="3" />  
+                    <input type="radio" name="q3" value="4" />  
+                    <input type="radio" name="q3" value="5" />  
+                    <input type="radio" name="q3" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+      </div> 
+      
+      <br></br>
+
+      <button type="button" class="continue">Continue</button>
+      </div> 
+
+      <!-- ***** BLACKWELL QUESTIONNAIRE ***** -->
+      <div class="slide" id="blackwell_questionnaire">
+        <p>Please show how much you agree or disagree with each statement by clicking the bubble that corresponds to your opinion.</p>
+        <br></br>
+
+    <div id="form">
+        
+        <form name="q0form">
+        &nbsp; <p class="blackwell_prompt"></p> &nbsp; &nbsp; 
+            <span id="blackwell_prompt_0">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q0" value="1" />  
+                    <input type="radio" name="q0" value="2" />  
+                    <input type="radio" name="q0" value="3" />  
+                    <input type="radio" name="q0" value="4" />  
+                    <input type="radio" name="q0" value="5" />  
+                    <input type="radio" name="q0" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+
+        <form name="q1form">
+        &nbsp; &nbsp; &nbsp; <p class="blackwell_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="blackwell_prompt_1">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q1" value="1" />  
+                    <input type="radio" name="q1" value="2" />  
+                    <input type="radio" name="q1" value="3" />  
+                    <input type="radio" name="q1" value="4" />  
+                    <input type="radio" name="q1" value="5" />  
+                    <input type="radio" name="q1" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+
+       <form name="q2form">
+        &nbsp; &nbsp; &nbsp; <p class="blackwell_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="blackwell_prompt_2">
+                <b>Strongly Disagree</b>
+                    <input type="radio" name="q2" value="1"  class="required"/>  
+                    <input type="radio" name="q2" value="2" />  
+                    <input type="radio" name="q2" value="3" />  
+                    <input type="radio" name="q2" value="4" />  
+                    <input type="radio" name="q2" value="5" />  
+                    <input type="radio" name="q2" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+        
+       <form name="q3form">
+        &nbsp; &nbsp; &nbsp; <p class="blackwell_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="blackwell_prompt_3">
+               <b>Strongly Disagree</b>
+                    <input type="radio" name="q3" value="1" />  
+                    <input type="radio" name="q3" value="2" />  
+                    <input type="radio" name="q3" value="3" />  
+                    <input type="radio" name="q3" value="4" />  
+                    <input type="radio" name="q3" value="5" />  
+                    <input type="radio" name="q3" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+       </form>
+        <br></br>
+
+        <form name="q4form">
+        &nbsp; &nbsp; &nbsp; <p class="blackwell_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="blackwell_prompt_4">
+               <b>Strongly Disagree</b>
+                    <input type="radio" name="q4" value="1" />  
+                    <input type="radio" name="q4" value="2" />  
+                    <input type="radio" name="q4" value="3" />  
+                    <input type="radio" name="q4" value="4" />  
+                    <input type="radio" name="q4" value="5" />  
+                    <input type="radio" name="q4" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+        <br></br>
+
+          <form name="q5form">
+        &nbsp; &nbsp; &nbsp; <p class="blackwell_prompt"> </p>&nbsp; &nbsp; &nbsp;
+            <span id="blackwell_prompt_5">
+               <b>Strongly Disagree</b>
+                    <input type="radio" name="q5" value="1" />  
+                    <input type="radio" name="q5" value="2" />  
+                    <input type="radio" name="q5" value="3" />  
+                    <input type="radio" name="q5" value="4" />  
+                    <input type="radio" name="q5" value="5" />  
+                    <input type="radio" name="q5" value="6" />  
+                <b>Strongly Agree</b>
+            </span>
+        </form>
+      </div> 
+      <br></br>
+      <button type="button" class="continue">Continue</button>
+      </div> 
+
+
+      <!-- ***** OUTGOING QUESTIONNAIRE ***** -->
+      <div class="slide" id="outgoing_questionnaire">
+        <p><b>Thanks! Just a few more questions:</b></p>
+        <p>What do you think this experiment was about? <input type="text" id="what_about"></input></p>
+       
+        <p>* Have you ever heard of fixed/growth "mindsets"?
+         <select id="heard_of">
+          <option></option>
+         <option>yes</option>
+         <option>no</option>
+         </select></p>
+        
+        <p id="if_heard_of">* Please describe what a "fixed" mindset is: <input type="text" id="what_is_fixed"></input></p>
+
+        <p>* What is your gender?
+          <select id="gender">
+            <option></option>
+            <option>female</option>
+            <option>male</option>
+          </select></p>
+  
+  <div>
+    <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea rows="7" cols="70" id="comments"></textarea></div>
+    
+    <p>Would you like to hear more about this study?
+      <select id="hear_more">
+        <option></option>
+        <option>yes</option>
+        <option>no</option>
+      </select>
+    </p>
+
+  <button type="button" id="formsubmit">Submit</button>
+  <p>* indicates a required field</p>
+  <p class="err">Please answer the required questions.</p>
+</div>
+
+       
+      <!-- ***** FINAL SLIDE ***** -->
+      <div class="slide" id="finished">
+        You're finished - thanks for participating! Submitting to Mechanical Turk...
+      </div>
+      
+    </div>
+    
+    <!-- run scripts -->
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="mmturkey.js"></script>
+    <script src="browserCheck.js"></script>
+    <script src="theories.goals.rep.js"></script>
+    
+  </body>
